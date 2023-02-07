@@ -4,3 +4,5 @@ def is_isogram(string):
 
 
 print(is_isogram('Qqwertyui'))
+
+s = "poop poop poop"
