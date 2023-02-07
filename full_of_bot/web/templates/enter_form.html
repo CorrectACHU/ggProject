@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    <input type="email" name="email" class="email-input">
+    <input type="password" name="password" class="pass-input">
+    <button type="submit" class="submit-btn">
+        login
+    </button>
+</form>
+</body>
+<script>
+    const email = document.getElementsByClassName("email-input")[0]
+    const pass = document.getElementsByClassName("pass-input")[0]
+    const submit = document.getElementsByClassName("submit-btn")[0]
+
+
+    submit.addEventListener("submit", async () => {
+        console.log(email.value)
+        await fetch("https://localhost:8080/", {
+            method: "POST",
+            headers: {},
+            body: {
+                email: email.value,
+                pass: pass.value,
+            }
+        })
+            .then((res) => {
+                console.log(res.json(), res.text())})
+    })
+</script>
+</html>
