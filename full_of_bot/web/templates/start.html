@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+<!--{{ super() }}-->
 <div>
-    <a href="/authorization/" class="start-link">
+    <a href="/login/" class="start-link">
         start
     </a>
 </div>
@@ -20,18 +16,19 @@
     }
 
     .start-link {
-        padding: 10px 20px;
-        border: 1px solid #000;
+        padding: 30px 120px;
+        border: 6px solid #beeeee;
         background-color: #1de8db;
         border-radius: 10px;
         text-decoration: none;
         color: black;
         transition: all .2s linear;
+        font-size: 32pt;
+        font-family: monospace ;
     }
 
     .start-link:hover{
         background-color: #348d8a;
     }
 </style>
-</body>
-</html>
+{% endblock %}
