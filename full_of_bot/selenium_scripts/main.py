@@ -5,12 +5,12 @@ from selenium.webdriver import Chrome
 from dotenv import load_dotenv
 from selenium.webdriver.common.by import By
 
-from bot_linkedin.selenium_scripts.using_driver import Driver
+from full_of_bot.selenium_scripts.using_driver import Driver
 
 load_dotenv()
 
 
-def enter_the_matrix():
+def get_driver(email, password):
     driver_type = os.getenv('DRIVER_TYPE')
     status = "[-] Status wasn't changed"
     try:
@@ -42,7 +42,7 @@ def get_filters(driver: Chrome = None) -> dict:
     if driver:
         url = "https://www.linkedin.com/search/results/people/?origin=SWITCH_SEARCH_VERTICAL&sid=%3AXL"
         driver.get(url)
-        time.sleep(2)
+        time.sleep(4)
 
         look_filters = driver.find_element(by=By.XPATH,
                                            value="//button[@aria-label='Show all filters. Clicking this button displays all available filter options.']")
@@ -68,7 +68,6 @@ def get_filters(driver: Chrome = None) -> dict:
 
 def set_filters(driver: Chrome = None, filters: dict = None):
     filters_list = ['1st', 'Poland', 'Computer Software']
-    filters = filters
     filters_by_fieldset = [ftrs for ftrs in driver.find_elements(by=By.XPATH,
                                                                  value="//span[@class='t-14 t-black--light t-normal']")]
     for f in filters_by_fieldset:
@@ -78,9 +77,10 @@ def set_filters(driver: Chrome = None, filters: dict = None):
 
 
 def main():
-    driver = enter_the_matrix()
-    filters = get_filters(driver)
-    set_filters(driver, filters)
+    # driver = get_driver(os.getenv('EMAIL'), os.getenv('PASSWORD'))
+    # filters = get_filters(driver)
+    # set_filters(driver, filters)
+    pass
 
 
 if __name__ == '__main__':

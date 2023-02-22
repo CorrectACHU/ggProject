@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form action="" method="post">
+{% extends 'base.html' %}
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<form action="" method="post" class="form registration">
     <input type="email" name="email" class="email-input">
     <input type="password" name="password" class="pass-input">
     <button type="submit" class="submit-btn">
         login
     </button>
 </form>
-</body>
 <script>
     const email = document.getElementsByClassName("email-input")[0]
     const pass = document.getElementsByClassName("pass-input")[0]
@@ -30,7 +27,33 @@
             }
         })
             .then((res) => {
-                console.log(res.json(), res.text())})
+                console.log(res.json(), res.text())
+            })
     })
 </script>
-</html>
+<style>
+
+    .form.registration {
+        height: 100vh;
+        justify-content: center;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .flash {
+        padding: 10px;
+    }
+
+    .flash.success {
+        border: 1px solid #21DB56;
+        background: #AEFFC5;
+    }
+
+    .flash.error {
+        border: 1px solid #FF4343;
+        background: #FF9C9C;
+    }
+</style>
+
+{% endblock %}
