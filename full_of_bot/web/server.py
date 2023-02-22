@@ -1,9 +1,14 @@
 import os
+
+from dotenv import load_dotenv
+
 from full_of_bot.selenium_scripts.main import get_filters, get_driver
 from flask import Flask, render_template, request, flash, session, redirect, url_for
 
+load_dotenv()
+
 app = Flask(__name__, static_folder='static')
-app.config['SECRET_KEY'] = 'FuturamaNaDyatlahprikinxDDD:s'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 
 @app.route('/')
