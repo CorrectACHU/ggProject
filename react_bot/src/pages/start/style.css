@@ -1,0 +1,16 @@
+
+.start-link {
+    padding: 30px 120px;
+    border: 6px solid #beeeee;
+    background-color: #1de8db;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    transition: all .2s linear;
+    font-size: 32pt;
+    font-family: monospace;
+}
+
+.start-link:hover {
+    background-color: #348d8a;
+}
