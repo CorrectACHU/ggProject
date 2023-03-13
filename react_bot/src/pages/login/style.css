@@ -20,6 +20,52 @@
   background: #FF9C9C;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.form-item label {
+  padding: 0 0 5px 5px;
+  font-size: 12px;
+}
+
+.form-item input {
+  font-size: 14px;
+  padding: 5px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-item textarea {
+  font-size: 14px;
+  padding: 5px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3feeee;
+  transition: all .3s;
+  font-size: 14px;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: #27c7c7;
+}
+
 .loader-wrapper {
   display: flex;
   margin: 0 auto;
